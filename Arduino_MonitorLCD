@@ -1,0 +1,19 @@
+// Monitor LCD:
+
+#include <LiquidCrystal.h>
+
+int RS = 12;
+int EN = 11;
+int D4 = 5;
+int D5 = 4;
+int D6 = 3;
+int D7 = 2;
+
+LiquidCrystal lcd(RS, EN, D4, D5, D6, D7);
+
+void setup(){
+  lcd.begin(16, 2);
+  lcd.print("Cursor de Arduino");
+  lcd.setCursor(1, 1);
+  lcd.print("DEFIJI - UNIR");
+}
