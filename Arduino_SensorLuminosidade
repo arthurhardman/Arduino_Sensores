@@ -1,0 +1,22 @@
+// Sensor de Luminosidade
+
+int porta = A1;
+int valor;
+
+void setup(){
+  Serial.begin(9600);
+  pinMode(porta, INPUT);
+}
+
+void loop(){
+  valor = analogRead(porta);
+  if (valor > 200){
+    Serial.println("Está claro");
+  }
+  else{
+    Serial.println("Está escuro");
+  };
+  
+  // Serial.println(valor); Utilizado somente para mostrar o valor
+  delay(500);
+ }
