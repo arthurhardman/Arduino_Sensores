@@ -1,0 +1,21 @@
+// Sensor de Ultrasom
+
+#include <Ultrasonic.h>
+
+int portaTrig = 7;
+int portaEcho = 6;
+int tempo;
+float distancia;
+
+Ultrasonic ultrasonic(portaTrig, portaEcho);
+
+void setup() {
+  Serial.begin(9600);
+  ultrasonic.setTimeout(40000UL);
+}
+
+void loop() {
+  Serial.print("Distância em CM: ");
+  Serial.println(ultrasonic.read());
+  delay(500);
+}
